@@ -27,11 +27,12 @@ This project is now configured for Vercel deployment. Follow these steps:
 /
 ├── api/                    # Server-side PHP files (required for Vercel)
 │   ├── index.php          # Main homepage
-│   └── example-page.php   # Example page
-├── assets/                # Static assets (CSS, JS, components)
-│   ├── css/
-│   ├── js/
-│   └── components/
+│   ├── example-page.php   # Example page
+│   └── assets/            # Static assets (CSS, JS, components)
+│       ├── css/
+│       ├── js/
+│       └── components/
+├── assets/                # Original assets (backup)
 ├── vercel.json           # Vercel configuration
 └── README.md
 ```
@@ -39,9 +40,9 @@ This project is now configured for Vercel deployment. Follow these steps:
 ## Important Notes
 
 - All PHP files that need to be executed must be in the `api/` directory
-- Static assets (CSS, JS, images) can remain in the root `assets/` directory
-- The `vercel.json` file routes requests to the correct PHP files
-- PHP files in the `api/` directory use `../` to reference assets outside the api folder
+- Static assets (CSS, JS, images) are also in the `api/assets/` directory for Vercel compatibility
+- The `vercel.json` file routes requests to the correct PHP files and assets
+- PHP files in the `api/` directory use relative paths to reference assets within the same directory
 
 ## URLs After Deployment
 
@@ -54,4 +55,5 @@ If you see PHP files downloading instead of executing:
 1. Ensure all PHP files are in the `api/` directory
 2. Check that `vercel.json` is in the project root
 3. Verify the PHP runtime is specified in `vercel.json`
-4. Make sure all file paths use `../` to reference assets outside the api folder
+4. Make sure all assets are in the `api/assets/` directory
+5. Check that file paths use relative paths within the api directory

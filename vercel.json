@@ -14,6 +14,10 @@
       "dest": "/api/example-page.php"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "/api/assets/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/$1"
     }

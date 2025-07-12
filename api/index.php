@@ -43,7 +43,7 @@ if ($_POST && isset($_POST['contact_form'])) {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Global CSS -->
-    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/global.css">
     
     <!-- jQuery 3.x from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -53,7 +53,7 @@ if ($_POST && isset($_POST['contact_form'])) {
 </head>
 <body>
     <!-- Include Navigation Component -->
-    <?php include '../assets/components/navbar.php'; ?>
+    <?php include 'assets/components/navbar.php'; ?>
 
     <!-- Main Hero Section -->
     <main class="hero-section">
@@ -147,6 +147,6 @@ if ($_POST && isset($_POST['contact_form'])) {
     </div>
 
     <!-- Global JavaScript -->
-    <script src="../assets/js/global.js"></script>
+    <script src="assets/js/global.js"></script>
 </body>
 </html>
