@@ -20,8 +20,7 @@ $(document).ready(function() {
     var $navMenu = $('#nav-menu');
     var $modal = $('#contact-modal');
     var $bookCallBtn = $('#book-call-btn');
-    var $viewWorkBtn = $('#view-work-btn');
-    var $viewPortfolioBtn = $('#view-portfolio-btn');
+    var $getTemplateBtn = $('#get-template-btn');
     var $modalClose = $('#modal-close');
     
     // Initialize all functionality
@@ -134,39 +133,20 @@ $(document).ready(function() {
     
     // === BUTTON INTERACTIONS ===
     function initButtonInteractions() {
-        // View Work button functionality
-        $viewWorkBtn.on('click', function() {
+        // Get Template button functionality
+        $getTemplateBtn.on('click', function() {
             // Add a subtle animation
             $(this).addClass('clicked');
             
-            // Scroll to portfolio section (if it exists) or show message
+            // Show template download or redirect
             setTimeout(function() {
-                var $portfolio = $('#portfolio');
-                if ($portfolio.length) {
-                    $('html, body').animate({
-                        scrollTop: $portfolio.offset().top - $('.main-header').outerHeight()
-                    }, 800);
-                } else {
-                    alert('Portfolio section coming soon! Please use the contact form to see examples of my work.');
-                }
-                $viewWorkBtn.removeClass('clicked');
-            }, 200);
-        });
-        
-        // View Portfolio button functionality
-        $viewPortfolioBtn.on('click', function() {
-            // Add a subtle animation
-            $(this).addClass('clicked');
-            
-            // Show portfolio or redirect
-            setTimeout(function() {
-                alert('Portfolio showcase coming soon! Please contact me to see examples of my work.');
-                $viewPortfolioBtn.removeClass('clicked');
+                alert('Template download will be available soon!');
+                $getTemplateBtn.removeClass('clicked');
             }, 200);
         });
         
         // Add click animation to all buttons
-        $('.btn-primary, .btn-secondary, .btn-template').on('click', function() {
+        $('.btn-primary, .btn-template').on('click', function() {
             var $this = $(this);
             $this.addClass('clicked');
             
@@ -181,7 +161,7 @@ $(document).ready(function() {
         var $contactForm = $('.contact-form');
         
         // Real-time validation
-        $contactForm.find('input, textarea, select').on('blur change', function() {
+        $contactForm.find('input, textarea').on('blur', function() {
             validateField($(this));
         });
         
@@ -190,7 +170,7 @@ $(document).ready(function() {
             var isValid = true;
             
             // Validate all fields
-            $contactForm.find('input[required], textarea[required], select[required]').each(function() {
+            $contactForm.find('input[required], textarea[required]').each(function() {
                 if (!validateField($(this))) {
                     isValid = false;
                 }
@@ -213,16 +193,11 @@ $(document).ready(function() {
         });
         
         function validateField($field) {
-            var value = $field.val();
+            var value = $field.val().trim();
             var isValid = true;
             
             // Remove existing error styling
             $field.removeClass('error');
-            
-            // For text inputs and textareas, trim whitespace
-            if ($field.is('input[type="text"], input[type="email"], textarea')) {
-                value = value.trim();
-            }
             
             // Check if field is required and empty
             if ($field.prop('required') && !value) {
@@ -345,7 +320,7 @@ $(document).ready(function() {
     // Add error styles to CSS dynamically
     $('<style>')
         .prop('type', 'text/css')
-        .html('.form-group input.error, .form-group textarea.error, .form-group select.error { border-color: #ef4444; } .btn-primary.clicked, .btn-secondary.clicked, .btn-template.clicked { transform: scale(0.98); }')
+        .html('.form-group input.error, .form-group textarea.error { border-color: #ef4444; } .btn-primary.clicked, .btn-template.clicked { transform: scale(0.98); }')
         .appendTo('head');
 });
 

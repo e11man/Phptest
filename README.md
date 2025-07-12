@@ -36,15 +36,36 @@ A professional portfolio website showcasing Josh Ellman's full-stack development
 ```
 /
 ├── index.php           # Main homepage file
+├── example-page.php    # Example page using modular navbar
 ├── assets/
 │   ├── css/
 │   │   └── global.css  # All styles and design variables
 │   ├── js/
 │   │   └── global.js   # Interactive functionality
-│   ├── components/     # Reusable UI components (future use)
+│   ├── components/
+│   │   └── navbar.php  # Modular navbar component
 │   └── images/         # Static images (future use)
 └── README.md           # This file
 ```
+
+## Modular Navbar Component
+
+The navigation bar is now a separate, reusable component that exactly matches the original Landio design.
+
+### Using the Navbar Component
+Include the navbar in any page:
+```php
+<?php include 'assets/components/navbar.php'; ?>
+```
+
+### Features
+- **Exact Landio Design**: GitHub icon, navigation menu, "Get Template" button
+- **Fully Responsive**: Mobile hamburger menu included
+- **Reusable**: Use across multiple pages
+- **Self-contained**: All functionality included
+
+### Example
+See `example-page.php` for a demonstration of how to use the modular navbar.
 
 ## Customization
 
@@ -53,7 +74,7 @@ Edit the CSS variables in `assets/css/global.css`:
 ```css
 :root {
     --primary-bg: #0a0a0b;     /* Main background color */
-    --accent-color: #00d4ff;   /* Accent/button color */
+    --accent-color: #7c3aed;   /* Accent/button color */
     --text-primary: #ffffff;   /* Main text color */
     /* ... other variables ... */
 }

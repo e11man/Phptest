@@ -8,7 +8,24 @@ tech_stack:
     environments:
       - shared_hosting
       - vercel
-    note: "Ensure code and assets are compatible with both traditional shared hosting and serverless platforms like Vercel."
+    note: |
+      Ensure code and assets are compatible with both traditional shared hosting and serverless platforms like Vercel.
+      For Vercel:
+        - Place all PHP files to be executed server-side in the `api/` directory.
+        - Include a `vercel.json` file in the project root with the following content to specify the PHP runtime:
+          {
+            "functions": {
+              "api/*.php": {
+                "runtime": "vercel-php@0.7.3"
+              }
+            }
+          }
+        - Use environment variables in `vercel.json` for secrets and configuration as needed.
+        - Deploy via GitHub integration or Vercel CLI (`vercel`).
+        - Vercel is best for small, modular PHP projects; for large-scale apps, prefer traditional PHP hosting.
+      For shared hosting:
+        - Use standard PHP file structure (e.g., `index.php` in the root).
+        - Ensure all assets and includes use relative paths compatible with both environments.
 
 modular_structure:
   main_page: index.php
@@ -20,6 +37,13 @@ modular_structure:
     - button_primary: assets/components/button_primary.php
     - button_secondary: assets/components/button_secondary.php
   module_loading: "Load UI components (e.g., buttons) only as needed. Reuse code by including shared modules wherever possible. Avoid code duplication."
+  vercel_structure_note: |
+    On Vercel, all server-side PHP modules must be placed in the `api/` folder to be executed as serverless functions.
+    Example structure for Vercel:
+      /api/index.php
+      /api/contact_form.php
+      /assets/components/button_primary.php
+    Adjust includes/require paths accordingly for Vercel compatibility.
 
 globalization:
   global_styles:
@@ -38,6 +62,7 @@ coding_guidelines:
   - All code must be self-contained and deployable on shared hosting and Vercel.
   - Add usage instructions as comments at the top of each file.
   - Briefly explain the purpose of each file and major function in comments.
+  - For Vercel, ensure all PHP files to be executed server-side are in the `api/` folder and referenced in `vercel.json`.
 
 ui_design:
   mobile_optimization: true
@@ -71,4 +96,12 @@ deployment:
   environment:
     - Shared hosting
     - Vercel
-  instructions: "All files should be ready to upload and run with minimal configuration. Ensure environment variables and deployment scripts are compatible with both environments."
+  instructions: |
+    All files should be ready to upload and run with minimal configuration.
+    For shared hosting:
+      - Upload all files to your web root.
+    For Vercel:
+      - Place server-side PHP files in `api/`.
+      - Add a `vercel.json` file as described above.
+      - Use Vercel CLI or GitHub integration for deployment.
+      - Ensure environment variables and deployment scripts are compatible with both environments.
