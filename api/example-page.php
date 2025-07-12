@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
     
     <!-- jQuery 3.x from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -22,7 +22,7 @@
 </head>
 <body>
     <!-- Include the modular navbar component -->
-    <?php include 'assets/components/navbar.php'; ?>
+    <?php include '../assets/components/navbar.php'; ?>
 
     <!-- Example content -->
     <main style="padding: 120px 20px 40px; min-height: 100vh;">
@@ -38,7 +38,7 @@
                 <h2 style="color: var(--text-primary); margin-bottom: 1rem;">How to use the modular navbar:</h2>
                 <div style="text-align: left; background: var(--primary-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
                     <code style="color: var(--accent-color); font-size: 0.9rem;">
-                        &lt;?php include 'assets/components/navbar.php'; ?&gt;
+                        &lt;?php include '../assets/components/navbar.php'; ?&gt;
                     </code>
                 </div>
             </div>
@@ -51,6 +51,6 @@
     </main>
 
     <!-- Global JavaScript -->
-    <script src="assets/js/global.js"></script>
+    <script src="../assets/js/global.js"></script>
 </body>
-</html> 
+</html>
