@@ -1,9 +1,9 @@
 <?php
 /*
  * LANDIO - AI Automation Landing Page
- * Main homepage file - Compatible with PHP 7.x and shared hosting
+ * Main homepage file - Compatible with PHP 7.x and Vercel deployment
  * 
- * Usage: Upload to web server root directory and access via browser
+ * Usage: Deploy to Vercel with vercel.json configuration
  * Requirements: PHP 7.x, modern web browser with jQuery 3.x support
  */
 
@@ -149,4 +149,4 @@ if ($_POST && isset($_POST['contact_form'])) {
     <!-- Global JavaScript -->
     <script src="assets/js/global.js"></script>
 </body>
-</html> 
+</html>

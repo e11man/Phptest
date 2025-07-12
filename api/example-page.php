@@ -38,7 +38,7 @@
                 <h2 style="color: var(--text-primary); margin-bottom: 1rem;">How to use the modular navbar:</h2>
                 <div style="text-align: left; background: var(--primary-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
                     <code style="color: var(--accent-color); font-size: 0.9rem;">
-                        &lt;?php include 'assets/components/navbar.php'; ?&gt;
+                        &lt;?php include '../assets/components/navbar.php'; ?&gt;
                     </code>
                 </div>
             </div>
@@ -53,4 +53,4 @@
     <!-- Global JavaScript -->
     <script src="assets/js/global.js"></script>
 </body>
-</html> 
+</html>
