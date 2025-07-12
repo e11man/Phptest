@@ -371,3 +371,36 @@ $.fn.loadingState = function(options) {
         }, settings.duration);
     });
 }; 
+
+// === SECTION ANIMATIONS (Framer-like) ===
+function animateSectionsOnScroll() {
+  var $animatedSections = $('.animate-fadeInUp, .animate-fadeIn');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          $(entry.target).addClass('animated');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    $animatedSections.each(function() { observer.observe(this); });
+  } else {
+    // Fallback for older browsers
+    function checkVisible() {
+      $animatedSections.each(function() {
+        var $el = $(this);
+        if ($el.hasClass('animated')) return;
+        var rect = this.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.82) {
+          $el.addClass('animated');
+        }
+      });
+    }
+    $(window).on('scroll resize', checkVisible);
+    checkVisible();
+  }
+}
+
+// Call after DOM ready
+$(function() { animateSectionsOnScroll(); }); 

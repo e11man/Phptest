@@ -106,6 +106,57 @@ if ($_POST && isset($_POST['contact_form'])) {
         </div>
     </main>
 
+    <!-- Process Steps Section -->
+    <section class="section-container animate-fadeInUp" id="process">
+      <div class="section-title">Our Simple <span style="font-style:italic;color:var(--accent-light);">&amp; Smart Process</span></div>
+      <div class="section-subtitle">How we deliver results in 3 clear steps</div>
+      <div style="display:flex;flex-wrap:wrap;gap:2em;justify-content:center;">
+        <div style="flex:1 1 220px;min-width:220px;max-width:340px;background:var(--primary-bg);border-radius:var(--border-radius-lg);box-shadow:0 2px 12px rgba(0,0,0,0.12);padding:2em 1.2em;transition:box-shadow 0.3s;">
+          <div style="font-size:2.2em;color:var(--accent-color);font-weight:bold;margin-bottom:0.5em;">STEP 1</div>
+          <div style="font-size:1.3em;font-weight:600;margin-bottom:0.5em;">Discover &amp; Analyze</div>
+          <div style="color:var(--text-secondary);">We audit your existing workflows, tools, and customer data to uncover inefficiencies and automation opportunities. Every system is mapped for clarity.</div>
+        </div>
+        <div style="flex:1 1 220px;min-width:220px;max-width:340px;background:var(--primary-bg);border-radius:var(--border-radius-lg);box-shadow:0 2px 12px rgba(0,0,0,0.12);padding:2em 1.2em;transition:box-shadow 0.3s;">
+          <div style="font-size:2.2em;color:var(--accent-color);font-weight:bold;margin-bottom:0.5em;">STEP 2</div>
+          <div style="font-size:1.3em;font-weight:600;margin-bottom:0.5em;">Automate &amp; Integrate</div>
+          <div style="color:var(--text-secondary);">We design and implement AI-powered workflows, integrating with your favorite tools and platforms for seamless automation.</div>
+        </div>
+        <div style="flex:1 1 220px;min-width:220px;max-width:340px;background:var(--primary-bg);border-radius:var(--border-radius-lg);box-shadow:0 2px 12px rgba(0,0,0,0.12);padding:2em 1.2em;transition:box-shadow 0.3s;">
+          <div style="font-size:2.2em;color:var(--accent-color);font-weight:bold;margin-bottom:0.5em;">STEP 3</div>
+          <div style="font-size:1.3em;font-weight:600;margin-bottom:0.5em;">Scale &amp; Optimize</div>
+          <div style="color:var(--text-secondary);">We monitor, optimize, and scale your automations, providing real-time analytics and expert support for continuous growth.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section-container animate-fadeInUp" id="why-choose">
+      <div class="section-title">Why Choose Us <span style="font-style:italic;color:var(--accent-light);">Over Others?</span></div>
+      <div class="section-subtitle">See how we compare against others in performance, growth, and results</div>
+      <div style="display:flex;flex-wrap:wrap;gap:2em;justify-content:center;align-items:stretch;">
+        <div style="flex:1 1 220px;min-width:220px;max-width:320px;background:var(--primary-bg);border-radius:var(--border-radius-lg);box-shadow:0 2px 12px rgba(0,0,0,0.12);padding:2em 1.2em;display:flex;flex-direction:column;align-items:center;">
+          <div style="font-size:2.5em;color:var(--accent-color);margin-bottom:0.5em;">&#9889;</div>
+          <div style="font-size:1.1em;font-weight:600;margin-bottom:0.5em;">Real-Time Intelligence</div>
+          <div style="color:var(--text-secondary);text-align:center;">Access accurate, real-time data to drive smarter decisions</div>
+        </div>
+        <div style="flex:1 1 220px;min-width:220px;max-width:320px;background:var(--primary-bg);border-radius:var(--border-radius-lg);box-shadow:0 2px 12px rgba(0,0,0,0.12);padding:2em 1.2em;display:flex;flex-direction:column;align-items:center;">
+          <div style="font-size:2.5em;color:var(--accent-color);margin-bottom:0.5em;">&#128200;</div>
+          <div style="font-size:1.1em;font-weight:600;margin-bottom:0.5em;">Measurable Impact</div>
+          <div style="color:var(--text-secondary);text-align:center;">Track performance, uncover insights, and achieve data-backed growth</div>
+        </div>
+        <div style="flex:1 1 220px;min-width:220px;max-width:320px;background:var(--primary-bg);border-radius:var(--border-radius-lg);box-shadow:0 2px 12px rgba(0,0,0,0.12);padding:2em 1.2em;display:flex;flex-direction:column;align-items:center;">
+          <div style="font-size:2.5em;color:var(--accent-color);margin-bottom:0.5em;">&#128279;</div>
+          <div style="font-size:1.1em;font-weight:600;margin-bottom:0.5em;">Seamless Integration</div>
+          <div style="color:var(--text-secondary);text-align:center;">Connect tools, teams, and workflows with intelligent automation</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section (unchanged, but can be wrapped for consistency) -->
+    <section class="section-container animate-fadeIn" id="contact">
+      <?php include 'assets/components/contact_form.php'; ?>
+    </section>
+
     <!-- Hidden Contact Form Modal -->
     <div class="modal" id="contact-modal">
         <div class="modal-content">
