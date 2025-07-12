@@ -1,0 +1,15 @@
+# Cursor Rules for Website Generation in PHP & jQuery
+
+- Only use PHP (for server-side) and jQuery (for client-side interactivity).
+- Avoid modern frameworks and keep code compatible with PHP 7.x and jQuery 3.x.
+- Generate a simple, well-documented website with clear file structure:
+  - index.php (main page)
+  - assets/ (for CSS, JS, images)
+  - Include basic navigation, contact form, and dynamic content loading with jQuery.
+- Write clean, readable code with explanatory comments for each section.
+- Use only plain HTML, CSS, PHP, and jQuery—no React, Vue, or modern JS features.
+- All code should be self-contained and easy to deploy on a shared hosting environment.
+- Add usage instructions as comments at the top of each file.
+- When generating code, explain the purpose of each file and major function in brief comments.
+- Do not generate any code that requires a database unless explicitly requested.
+- Prioritize simplicity and compatibility over advanced features.
