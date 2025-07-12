@@ -1,0 +1,97 @@
+/*
+ * global.css
+ * Usage: Include this file in all pages for global styles and variables.
+ * Purpose: Centralizes all design variables (colors, fonts, spacing) and provides a dark, modern, mobile-optimized theme with a purple accent.
+ */
+:root {
+  --color-bg: #181828;
+  --color-bg-alt: #23233a;
+  --color-text: #f5f5fa;
+  --color-accent: #8f5cff;
+  --color-accent-hover: #a98cff;
+  --color-card: #23233a;
+  --color-border: #28284a;
+  --font-main: 'Inter', Arial, sans-serif;
+  --radius: 12px;
+  --spacing: 1.2rem;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-secondary:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .card {
+    padding: 0.8rem;
+  }
+}
