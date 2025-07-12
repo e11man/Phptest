@@ -1,0 +1,74 @@
+tech_stack:
+  server_side: PHP
+  client_side: jQuery
+  compatibility:
+    php_version: "7.x"
+    jquery_version: "3.x"
+  deployment:
+    environments:
+      - shared_hosting
+      - vercel
+    note: "Ensure code and assets are compatible with both traditional shared hosting and serverless platforms like Vercel."
+
+modular_structure:
+  main_page: index.php
+  assets_folder: assets/
+  modules:
+    - navigation
+    - contact_form
+    - dynamic_content_loader
+    - button_primary: assets/components/button_primary.php
+    - button_secondary: assets/components/button_secondary.php
+  module_loading: "Load UI components (e.g., buttons) only as needed. Reuse code by including shared modules wherever possible. Avoid code duplication."
+
+globalization:
+  global_styles:
+    file: assets/css/global.css
+    description: "Define all style variables (fonts, colors, spacing, etc.) in a single global CSS file. Change fonts, colors, and other design variables in one place for project-wide consistency."
+    usage: "All component styles must reference these global variables."
+  global_js:
+    file: assets/js/global.js
+    description: "Place shared JavaScript variables and functions here for easy reuse."
+
+coding_guidelines:
+  - Write highly efficient, clean, and readable code with explanatory comments.
+  - Reuse code aggressively; avoid duplicating logic or UI components.
+  - Modularize UI elements (e.g., only one file for primary button, one for secondary).
+  - Use only plain HTML, CSS, PHP, and jQuery.
+  - All code must be self-contained and deployable on shared hosting and Vercel.
+  - Add usage instructions as comments at the top of each file.
+  - Briefly explain the purpose of each file and major function in comments.
+
+ui_design:
+  mobile_optimization: true
+  responsive_design: true
+  gradients: false
+  style_notes: "Never use gradients. All styles must be highly mobile-optimized and accessible. Use flexible layouts (e.g., flexbox) and relative units for sizing. Reference global style variables for fonts, colors, and spacing."
+  themeable: true # Supports easy theme and image changes[7]
+
+security_best_practices:
+  - Sanitize and validate all user inputs.
+  - Use prepared statements for database queries.
+  - Escape output to prevent XSS.
+  - Use secure session handling and CSRF protection.
+  - Store sensitive data securely and follow PHP security guidelines.
+
+features:
+  - Basic navigation bar (modular)
+  - Contact form (modular)
+  - Dynamic content loading with jQuery (modular)
+  - Modular, reusable button components
+
+priorities:
+  - Simplicity and compatibility over advanced features.
+  - Maximize code reuse and modularity.
+  - Ensure high efficiency and security.
+  - Never use gradients in styles.
+  - Always optimize for mobile devices.
+  - Centralize all design variables for easy global changes.
+
+deployment:
+  environment:
+    - Shared hosting
+    - Vercel
+  instructions: "All files should be ready to upload and run with minimal configuration. Ensure environment variables and deployment scripts are compatible with both environments."
